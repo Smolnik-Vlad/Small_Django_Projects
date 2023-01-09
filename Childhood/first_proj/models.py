@@ -12,7 +12,7 @@ class Category(models.Model):
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    event = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='category')
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name='category')
 
     def __str__(self):
-        return f"id: {self.id}, title: {self.title}, connection: {self.event.title}"
+        return f"id: {self.id}, title: {self.title}, connection: {self.category.title}"

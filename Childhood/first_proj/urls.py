@@ -1,10 +1,9 @@
 from django.urls import path
 
-from first_proj.views import get_info_about_childhood, get_info_about_youth, get_info_about_adulthood
+from first_proj.views import life_period, get_info_about_choosen_period
 
 urlpatterns = [
-    path('childhood/', get_info_about_childhood),
-    path('youth/', get_info_about_youth),
-    path ('adulthood/', get_info_about_adulthood)
+    path('<str:period>/', get_info_about_choosen_period),
+
 
 ]
